@@ -1,0 +1,51 @@
+{
+    "name": "emedia/app-settings",
+    "description": "Set application-wide settings in the database and retrieve them.",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Shane Perera",
+            "email": "shane@elegantmedia.com.au"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "elegantmedia/oxygen-foundation": "^3.0",
+        "emedia/formation": "^2.0",
+        "spatie/laravel-sluggable": "^3.4"
+    },
+    "autoload": {
+        "files": [
+            "src/functions.php"
+        ],
+        "psr-4": {
+            "EMedia\\AppSettings\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type":"vcs",
+            "url":"git@bitbucket.org:elegantmedia/formation.git"
+        },
+		{
+			"type":"vcs",
+			"url":"git@bitbucket.org:elegantmedia/lotus.git"
+		}
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EMedia\\AppSettings\\AppSettingsServiceProvider"
+            ],
+            "aliases": {
+                "Setting": "EMedia\\AppSettings\\Facades\\Setting"
+            }
+        }
+    }
+}
